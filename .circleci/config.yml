@@ -3,11 +3,7 @@ jobs:
   helloworld:
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
     steps:
-      - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 
   print-multiple-messages:
@@ -18,7 +14,6 @@ jobs:
         type: string
     steps:
       - run: echo "<< parameters.message >> hello world"
-      - checkout # check out the code in the project directory
       - run:
           name: Run a file
           command: |
@@ -29,7 +24,6 @@ jobs:
     docker:
       - image: cimg/base:current-22.04
     steps:
-      - checkout
       - run:
           name: Create Gauge docker image
           command: |
@@ -39,12 +33,14 @@ workflows:
   version: 2
   print_hello_world:
     jobs:
+      - checkout # check out the code in the project directory
       - helloworld
   print_custom_var_and_shell:
     jobs:
+      - checkout
       - print-multiple-messages:
           message: Somestring
-  failing_step_for_ssh:
+  failing_build:
     jobs:
       - checkout
-      - failing_build
+      - failing_step_for_ssh
