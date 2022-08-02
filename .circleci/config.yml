@@ -22,6 +22,7 @@ jobs:
           name: Run a file
           command: |
             echo $(pwd)
+            echo $(ls)
             bash testfolder/hello_there.sh
 
 workflows:
