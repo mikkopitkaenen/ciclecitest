@@ -27,10 +27,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: asd
+          name: this jobs docker build fails
           command: |
             docker -v
-            echo $(docker -v)
+            ls
             docker build -f Dockerfile -t asd .
 
 workflows:
