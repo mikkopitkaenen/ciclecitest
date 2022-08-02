@@ -36,10 +36,7 @@ jobs:
       - image: cimg/base:2022.07
     steps:
       - checkout
-      - run:
-          name: Create Gauge docker image
-          command: |
-            docker build -t sometag .
+      - run: echo moi
 
 workflows:
   version: 2
