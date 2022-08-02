@@ -21,9 +21,10 @@ jobs:
       - run:
           name: Run a file
           command: |
-            echo $(pwd)
-            echo $(ls)
-            bash ~/testfolder/hello_there.sh
+            echo eka $(pwd)
+            cd ~/project/testfolder
+            echo toka $(pwd)
+            bash hello_there.sh
 
 workflows:
   version: 2
