@@ -18,13 +18,17 @@ jobs:
         type: string
     steps:
       - run: echo "<< parameters.message >> hello world"
+      - run:
+        name: Run a file
+        command: |
+          bash testfolder/run_test.sh
 
 workflows:
   version: 2
   print_hello_world:
     jobs:
       - helloworld
-  use_custom_variable:
+  print_custom_var_and_shell:
     jobs:
       - print-a-message:
           message: Somestring
