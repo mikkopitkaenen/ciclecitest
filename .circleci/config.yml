@@ -23,7 +23,7 @@ jobs:
           command: |
             echo $(pwd)
             echo $(ls)
-            bash testfolder/hello_there.sh
+            bash ~/testfolder/hello_there.sh
 
 workflows:
   version: 2
