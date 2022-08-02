@@ -25,7 +25,7 @@ jobs:
             cd ~/project/testfolder
             bash hello_there.sh circleconfig
 
-  failing_build:
+  failing_step_for_ssh:
     docker:
       - image: cimg/base:current-22.04
     steps:
