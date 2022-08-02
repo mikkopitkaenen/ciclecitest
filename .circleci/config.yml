@@ -17,14 +17,14 @@ jobs:
       message:
         type: string
     steps:
-      - run: echo << parameters.message >>
+      - run: echo "<< parameters.message >>""
 
 workflows:
   version: 2
   print_hello_world:
     jobs:
       - helloworld
-  my-workflow:
+  use_custom_variable:
     jobs:
       - print-a-message:
           message: Somestring
