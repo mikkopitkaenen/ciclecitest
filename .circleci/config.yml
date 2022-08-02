@@ -18,6 +18,7 @@ jobs:
         type: string
     steps:
       - run: echo "<< parameters.message >> hello world"
+      - checkout # check out the code in the project directory
       - run:
           name: Run a file
           command: |
