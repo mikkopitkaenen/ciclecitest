@@ -23,7 +23,7 @@ jobs:
 
   failing_step_for_ssh:
     docker:
-      - image: cimg/base:current-22.04
+      - image: cimg/base:2022.07
     steps:
       - checkout
       - run:
