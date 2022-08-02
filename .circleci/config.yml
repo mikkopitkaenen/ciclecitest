@@ -14,6 +14,7 @@ jobs:
         type: string
     steps:
       - run: echo "<< parameters.message >> hello world"
+      - checkout # check out the code in the project directory
       - run:
           name: Run a file
           command: |
@@ -24,6 +25,7 @@ jobs:
     docker:
       - image: cimg/base:current-22.04
     steps:
+      - checkout
       - run:
           name: Create Gauge docker image
           command: |
@@ -33,7 +35,6 @@ workflows:
   version: 2
   print_hello_world:
     jobs:
-      - checkout # check out the code in the project directory
       - helloworld
   print_custom_var_and_shell:
     jobs:
@@ -42,5 +43,4 @@ workflows:
           message: Somestring
   failing_build:
     jobs:
-      - checkout
       - failing_step_for_ssh
