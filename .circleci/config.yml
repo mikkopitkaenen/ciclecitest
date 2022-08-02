@@ -21,7 +21,7 @@ jobs:
             cd ~/project/testfolder
             bash hello_there.sh circleconfig
 
-  failing_step_for_ssh:
+  bu_failing_step_for_ssh:
     docker:
       - image: cimg/base:2022.07
     steps:
@@ -39,7 +39,7 @@ jobs:
       - run:
           name: asd
           command: |
-            docker build -t sometag .
+            echo $(docker -v)
 
 workflows:
   version: 2
