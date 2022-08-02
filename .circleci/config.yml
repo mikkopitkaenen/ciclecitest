@@ -39,7 +39,7 @@ jobs:
       - run:
           name: asd
           command: |
-            echo moi
+            docker build -t sometag .
 
 workflows:
   version: 2
