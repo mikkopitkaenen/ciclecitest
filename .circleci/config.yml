@@ -36,8 +36,10 @@ jobs:
       - image: cimg/base:2022.07
     steps:
       - checkout
-      - run: |
-        echo moi
+      - run:
+        name: asd
+        command: |
+          echo moi
 
 workflows:
   version: 2
