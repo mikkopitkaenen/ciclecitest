@@ -37,9 +37,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: asd
-        command: |
-          echo moi
+          name: asd
+          command: |
+            echo moi
 
 workflows:
   version: 2
