@@ -1,2 +1,3 @@
 #!/bin/bash
-echo "hello from file. $1"
+Message=$1
+echo "hello from file: $Message"
