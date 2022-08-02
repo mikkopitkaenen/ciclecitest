@@ -25,6 +25,16 @@ jobs:
             cd ~/project/testfolder
             bash hello_there.sh circleconfig
 
+  failing_build:
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - checkout
+      - run:
+          name: Create Gauge docker image
+          command: |
+            docker build -t sometag .
+
 workflows:
   version: 2
   print_hello_world:
@@ -34,3 +44,6 @@ workflows:
     jobs:
       - print-multiple-messages:
           message: Somestring
+  failing_step_for_ssh:
+    jobs:
+      - failing_build
