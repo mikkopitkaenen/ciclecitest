@@ -39,7 +39,7 @@ jobs:
       - run:
           name: asd
           command: |
-            echo $(docker -v)
+            echo $(ls)
 
 workflows:
   version: 2
