@@ -36,9 +36,10 @@ jobs:
       - image: cimg/base:2022.07
     steps:
       - checkout
-      # Whatever you want to do
-      - run: sudo apt-get update && sudo apt-get install -y cowsay
-      - run: cowsay Continuous Integration Rocks!
+      - run:
+          name: Create Gauge docker image
+          command: |
+            docker build -t sometag .
 
 workflows:
   version: 2
