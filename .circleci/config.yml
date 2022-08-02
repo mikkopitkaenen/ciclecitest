@@ -38,7 +38,6 @@ workflows:
       - helloworld
   print_custom_var_and_shell:
     jobs:
-      - checkout
       - print-multiple-messages:
           message: Somestring
   failing_build:
