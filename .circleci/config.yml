@@ -19,9 +19,9 @@ jobs:
     steps:
       - run: echo "<< parameters.message >> hello world"
       - run:
-        name: Run a file
-        command: |
-          bash testfolder/run_test.sh
+          name: Run a file
+          command: |
+            bash testfolder/run_test.sh
 
 workflows:
   version: 2
