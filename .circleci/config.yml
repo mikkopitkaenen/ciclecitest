@@ -17,7 +17,7 @@ jobs:
       message:
         type: string
     steps:
-      - run: echo "<< parameters.message >>"
+      - run: echo "<< parameters.message >> hello world"
 
 workflows:
   version: 2
