@@ -10,8 +10,21 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 
+  print-a-message:
+    docker:
+      - image: cimg/base:2022.03
+    parameters:
+      message:
+        type: string
+    steps:
+      - run: echo << parameters.message >>
+
 workflows:
   version: 2
-  pull_request:
+  print_hello_world:
     jobs:
       - helloworld
+  my-workflow:
+    jobs:
+      - print-a-message:
+          message: Somestring
