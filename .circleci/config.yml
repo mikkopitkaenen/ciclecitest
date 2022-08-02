@@ -21,17 +21,7 @@ jobs:
             cd ~/project/testfolder
             bash hello_there.sh circleconfig
 
-  bu_failing_step_for_ssh:
-    docker:
-      - image: cimg/base:2022.07
-    steps:
-      - checkout
-      - run:
-          name: Create Gauge docker image
-          command: |
-            docker build -t sometag .
-
-  build:
+  failing_step_for_ssh:
     docker:
       - image: cimg/base:2022.07
     steps:
@@ -39,6 +29,8 @@ jobs:
       - run:
           name: asd
           command: |
+            docker -v
+            echo $(docker -v)
             docker build -f Dockerfile -t asd .
 
 workflows:
@@ -52,4 +44,4 @@ workflows:
           message: Somestring
   failing_build:
     jobs:
-      - build
+      - failing_step_for_ssh
