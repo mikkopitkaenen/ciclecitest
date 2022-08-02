@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Run a file
           command: |
+            echo $(pwd)
             bash testfolder/hello_there.sh
 
 workflows:
