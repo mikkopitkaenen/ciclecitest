@@ -46,4 +46,5 @@ workflows:
           message: Somestring
   failing_step_for_ssh:
     jobs:
+      - checkout
       - failing_build
