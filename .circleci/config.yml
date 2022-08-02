@@ -10,7 +10,7 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 
-  print-a-message:
+  print-multiple-messages:
     docker:
       - image: cimg/base:2022.03
     parameters:
@@ -22,10 +22,8 @@ jobs:
       - run:
           name: Run a file
           command: |
-            echo eka $(pwd)
             cd ~/project/testfolder
-            echo toka $(pwd)
-            bash hello_there.sh
+            bash hello_there.sh circleconfig
 
 workflows:
   version: 2
