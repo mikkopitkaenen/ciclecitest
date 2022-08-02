@@ -32,15 +32,15 @@ jobs:
 workflows:
   version: 2
   print_hello_world:
-    steps:
+    jobs:
       - checkout # check out the code in the project directory
       - helloworld
   print_custom_var_and_shell:
-    steps:
+    jobs:
       - checkout
       - print-multiple-messages:
           message: Somestring
   failing_build:
-    steps:
+    jobs:
       - checkout
       - failing_step_for_ssh
