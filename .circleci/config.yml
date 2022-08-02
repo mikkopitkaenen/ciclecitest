@@ -31,6 +31,15 @@ jobs:
           command: |
             docker build -t sometag .
 
+  build:
+    docker:
+      - image: cimg/base:2022.07
+    steps:
+      - checkout
+      # Whatever you want to do
+      - run: sudo apt-get update && sudo apt-get install -y cowsay
+      - run: cowsay Continuous Integration Rocks!
+
 workflows:
   version: 2
   print_hello_world:
@@ -42,4 +51,4 @@ workflows:
           message: Somestring
   failing_build:
     jobs:
-      - failing_step_for_ssh
+      - build
