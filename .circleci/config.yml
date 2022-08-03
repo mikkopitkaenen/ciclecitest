@@ -22,8 +22,8 @@ jobs:
             bash hello_there.sh circleconfig
 
   failing_step_for_ssh:
-    docker:
-      - image: cimg/base:2022.07
+    machine:
+      image: ubuntu-2004:202107-02
     steps:
       - checkout
       - run:
@@ -31,7 +31,6 @@ jobs:
           command: |
             docker -v
             ls
-            systemctl start docker
             docker build -t dockertag.
 
 workflows:
