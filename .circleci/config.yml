@@ -31,7 +31,7 @@ jobs:
           command: |
             docker -v
             ls
-            docker build -f Dockerfile -t asd .
+            docker build .
 
 workflows:
   version: 2
