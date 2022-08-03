@@ -31,7 +31,7 @@ jobs:
           command: |
             docker -v
             ls
-            docker build -t dockertag.
+            docker build -t dockertag .
 
 workflows:
   version: 2
