@@ -30,7 +30,6 @@ jobs:
           name: this jobs docker build fails
           command: |
             docker -v
-            ls
             docker build -t dockertag .
 
 workflows:
